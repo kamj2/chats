@@ -1,4 +1,12 @@
-body {
+/* Reset بعض الخصائص الافتراضية لضمان الاتساق عبر المتصفحات */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* تصميم الجسم */
+  body {
     background-color: black;
     display: flex;
     align-items: center;
@@ -8,6 +16,7 @@ body {
     font-family: Arial, sans-serif;
   }
   
+  /* تصميم حاوية الدردشة */
   .chat-container {
     display: flex;
     flex-direction: column;
@@ -21,6 +30,7 @@ body {
     border-radius: 8px;
   }
   
+  /* تصميم صندوق الدردشة */
   .chat-box {
     flex-grow: 1;
     padding-bottom: 80px; /* لحساب مكان حقل الإدخال وزر الإرسال */
@@ -29,6 +39,7 @@ body {
     color: white;
   }
   
+  /* تصميم الرسائل */
   .message {
     position: relative;
     margin-bottom: 10px;
@@ -41,6 +52,7 @@ body {
     overflow: hidden;
   }
   
+  /* تصميم شريط جانبي للرسائل */
   .message::before {
     content: "";
     position: absolute;
@@ -51,12 +63,14 @@ body {
     height: 100%;
   }
   
+  /* تصميم نص الرسائل */
   .message p {
     margin: 0;
     color: white;
     word-break: break-word;
   }
   
+  /* تصميم حقل الإدخال */
   input {
     padding: 10px;
     width: calc(100% - 80px); /* التأكد من ملاءمة الحجم */
@@ -67,6 +81,7 @@ body {
     color: white;
   }
   
+  /* تصميم الأزرار */
   button {
     border: none;
     border-radius: 4px;
@@ -78,10 +93,12 @@ body {
     margin-left: 10px;
   }
   
+  /* تصميم حقل الإدخال عند التركيز */
   input:focus {
     border-color: #0d6efd;
   }
   
+  /* تصميم حاوية إدخال الرسائل */
   .message-input {
     display: flex;
     align-items: center;
@@ -91,6 +108,7 @@ body {
     right: 20px;
   }
   
+  /* تصميم النص داخل الرسائل */
   .message p strong {
     padding: 5px;
     border-radius: 2px;
@@ -117,6 +135,13 @@ body {
     button {
       width: 100%;
       margin: 0;
+    }
+  }
+  
+  /* دعم إضافي للمتصفحات القديمة */
+  @supports (-webkit-appearance: none) {
+    input[type="text"] {
+      -webkit-appearance: none; /* إزالة تأثيرات التصفح الافتراضية في Chrome */
     }
   }
   
